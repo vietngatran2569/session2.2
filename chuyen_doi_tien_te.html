@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<table >
+  <tr>
+      <td style="color: blue;">Amount</td>
+      <td style="color: blue;">From Curency</td>
+      <td style="color: blue;">To Curency</td>
+      <td></td>
+  </tr>
+    <tr>
+        <td>
+            <input id="amout">
+        </td>
+        <td>
+            <select id="from">
+                <option value ="1">Viet nam</option>
+                <option value ="2">Japan</option>
+            </select>
+        </td>
+        <td>
+            <select id="to">
+                <option value="1">Viet nam</option>
+                <option value="2">Japan</option>
+            </select>
+        </td>
+        <td>
+            <input type="submit" onclick="chuyendoi()">
+        </td>
+    </tr>
+    <label>Result: </label>
+    <label id="result"></label>
+</table>
+<script>
+ function chuyendoi() {
+    let amount = document.getElementById("amout").valueOf().value;
+    let fram=document.getElementById("from").valueOf().value;
+    let toam=document.getElementById("to").valueOf().value;
+
+    if(sosanh(fram,"2") && sosanh(toam, "1")){
+        document.getElementById("result").innerHTML = convertJapanToVND(amount)
+    }else if (sosanh(fram,"1") &&sosanh(toam,"2")){
+        document.getElementById("result").innerHTML=convertVNDToJapan(amount)
+    }else if (sosanh(fram,"1") &&sosanh(toam,"1")) {
+        document.getElementById("result").innerHTML = convertVNDToVND(amount)
+    }else
+        document.getElementById("result").innerHTML = convertJPToJP(amount)
+ }
+ function sosanh(a,b) {
+     if(a==b)return true;
+     else
+     return false;
+
+ }
+
+ function convertJapanToVND(a) {
+     return a * 25000;
+ }
+ function convertVNDToJapan(a){
+     return a/25000;
+ }
+ function convertVNDToVND(a) {
+     return a*1;
+ }
+ function convertJPToJP(a) {
+     return a*1;
+ }
+
+</script>
+</body>
+</html>
