@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>CACULATOR</label>
+<br/>
+
+<table>
+  <tr>
+      <td><input id="1" ></td>
+      <td><input id="2"></td>
+  </tr>
+</table>
+<table>
+    <br/>
+    <br/>
+    <tr>
+        <td><input type = button name = Cong value = "cong" onclick = "phepCong()"></td>
+        <td><input type = button name = Tru value = "tru" onclick = "phepTru()"></td>
+        <td><input type = button name = Nhan value = "nhan" onclick = "phepNhan()"></td>
+        <td><input type = button name = Chia value = "chia" onclick = "phepChia()"></td>
+    </tr>
+</table>
+<script>
+
+    function phepCong() {
+        let sot1=document.getElementById(1).valueOf().value;
+        let sot2=document.getElementById(2).valueOf().value;
+        let so1=parseInt(sot1);
+        let so2=parseInt(sot2);
+        alert(so1+so2);
+    }
+    function phepTru() {
+        let sot1=document.getElementById(1).valueOf().value;
+        let sot2=document.getElementById(2).valueOf().value;
+        let so1=parseInt(sot1);
+        let so2=parseInt(sot2);
+        alert((so1-so2));
+    }
+    function phepNhan() {
+        let sot1=document.getElementById(1).valueOf().value;
+        let sot2=document.getElementById(2).valueOf().value;
+        let so1=parseInt(sot1);
+        let so2=parseInt(sot2);
+        alert((so1*so2));
+    }
+    function phepChia() {
+        let sot1=document.getElementById(1).valueOf().value;
+        let sot2=document.getElementById(2).valueOf().value;
+        let so1=parseInt(sot1);
+        let so2=parseInt(sot2);
+        alert((so1/so2));
+    }
+</script>
+</body>
+</html>
