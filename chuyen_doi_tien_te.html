@@ -19,13 +19,13 @@
         <td>
             <select id="from">
                 <option value ="1">Viet nam</option>
-                <option value ="2">Japan</option>
+                <option value ="214">Japan</option>
             </select>
         </td>
         <td>
             <select id="to">
                 <option value="1">Viet nam</option>
-                <option value="2">Japan</option>
+                <option value="214">Japan</option>
             </select>
         </td>
         <td>
@@ -36,40 +36,13 @@
     <label id="result"></label>
 </table>
 <script>
- function chuyendoi() {
-    let amount = document.getElementById("amout").valueOf().value;
-    let fram=document.getElementById("from").valueOf().value;
-    let toam=document.getElementById("to").valueOf().value;
-
-    if(sosanh(fram,"2") && sosanh(toam, "1")){
-        document.getElementById("result").innerHTML = convertJapanToVND(amount)
-    }else if (sosanh(fram,"1") &&sosanh(toam,"2")){
-        document.getElementById("result").innerHTML=convertVNDToJapan(amount)
-    }else if (sosanh(fram,"1") &&sosanh(toam,"1")) {
-        document.getElementById("result").innerHTML = convertVNDToVND(amount)
-    }else
-        document.getElementById("result").innerHTML = convertJPToJP(amount)
- }
- function sosanh(a,b) {
-     if(a==b)return true;
-     else
-     return false;
-
- }
-
- function convertJapanToVND(a) {
-     return a * 25000;
- }
- function convertVNDToJapan(a){
-     return a/25000;
- }
- function convertVNDToVND(a) {
-     return a*1;
- }
- function convertJPToJP(a) {
-     return a*1;
- }
-
+  function chuyendoi(){
+      let amo=parseInt(document.getElementById("amout").value);
+      let tto=parseInt(document.getElementById("to").value);
+      let frr=parseInt(document.getElementById("from").value);
+      let re= (amo*tto)/frr;
+      document.getElementById("result").innerHTML=re;
+  }
 </script>
 </body>
 </html>
